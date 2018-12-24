@@ -3,7 +3,7 @@ class PigLatinizer
 
   def piglatinize(word)
     if word.include?(" ")
-      sentence_pig_latinizer(word)
+       return sentence_pig_latinizer(word)
     else
       alpha=("a".."z").to_a
       alpha_uppercase=("A".."Z").to_a
@@ -21,6 +21,7 @@ class PigLatinizer
       end
     end
     # binding.pry
+    puts result
     result
   end
 
@@ -29,12 +30,8 @@ class PigLatinizer
     pig_latinized_words = words_of_a_sentence.collect do |word|
       piglatinize(word)
     end
-    # binding.pry
     final=pig_latinized_words.join(" ")
-    # binding.pry
     final
   end
 
 end
-
-# PigLatinizer.new.sentence_pig_latinizer("I love programming")
